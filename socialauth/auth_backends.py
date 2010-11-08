@@ -306,6 +306,7 @@ class FacebookBackend:
                 user = User.objects.create(username=username)
                 user.first_name = fb_data['first_name']
                 user.last_name = fb_data['last_name']
+                user.email = fb_data['email']
                 user.save()
                 
             fb_profile = FacebookUserProfile(facebook_uid=uid, user=user)
